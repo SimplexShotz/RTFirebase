@@ -15,7 +15,7 @@ var firebase = (function() {
       var ret;
       await database.ref(r).once("value", function(data) {
         ret = data.val();
-      }
+      });
       return ret;
     };
   };
