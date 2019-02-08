@@ -24,6 +24,7 @@ function setup() {
       };
     };
   })();
+  fb = new fb();
 }
 
 function draw() {
