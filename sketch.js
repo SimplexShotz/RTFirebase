@@ -20,6 +20,7 @@ function setup() {
         await database.ref(r).once("value", function(data) {
           ret = data.val();
         });
+        console.log(ret);
         return ret;
       };
     };
