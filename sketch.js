@@ -1,5 +1,5 @@
 
-var firebase = (function() {
+var fb = (function() {
   var config = {
     apiKey: "AIzaSyC82qKSxASHV73ab3MhmfZOw1OUryZwEqI",
     authDomain: "realtimefirebasetest.firebaseapp.com",
@@ -8,8 +8,8 @@ var firebase = (function() {
     storageBucket: "realtimefirebasetest.appspot.com",
     messagingSenderId: "628446710214"
   };
-  fb.initializeApp(config);
-  var database = fb.database();
+  firebase.initializeApp(config);
+  var database = firebase.database();
   return function() {
     this.get = async function(r) {
       var ret;
