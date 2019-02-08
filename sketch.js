@@ -32,6 +32,16 @@ function setup() {
         ret.set(val);
         return true;
       }
+      this.del = async function(p) {
+        var path = p.split(".");
+        var ref = database.ref(path.shift());
+        var ret = ref;
+        for (var i = 0; i < path.length; i++) {
+          ret = ret.child(path[i]);
+        }
+        ret.remove();
+        return true;
+      }
     };
   })();
   fb = new fb();
