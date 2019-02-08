@@ -19,10 +19,15 @@ function setup() {
         var ret;
         await database.ref(r).once("value", function(data) {
           ret = data.val();
-        }).then(console.log(0));
-        console.log(ret);
+        });
         return ret;
       };
+      this.set = async function(p) {
+        var path = p.split(".");
+        var ref = database.ref(path.shift());
+        console.log(path);
+        var ret = ref;
+      }
     };
   })();
   fb = new fb();
