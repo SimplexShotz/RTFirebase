@@ -31,7 +31,7 @@ function setup() {
         }
         ret.set(val);
         return true;
-      }
+      };
       this.del = async function(p) {
         var path = p.split(".");
         var ref = database.ref(path.shift());
@@ -41,7 +41,7 @@ function setup() {
         }
         ret.remove();
         return true;
-      }
+      };
     };
   })();
   fb = new fb();
