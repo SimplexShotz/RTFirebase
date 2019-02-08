@@ -22,11 +22,15 @@ function setup() {
         });
         return ret;
       };
-      this.set = async function(p) {
+      this.set = async function(p, val) {
         var path = p.split(".");
         var ref = database.ref(path.shift());
-        console.log(path);
         var ret = ref;
+        for (var i = 0; i < path.length; i++) {
+          ret = ret.child(path[i]);
+        }
+        ret.set(val);
+        return true;
       }
     };
   })();
