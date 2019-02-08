@@ -19,7 +19,7 @@ function setup() {
         var ret;
         await database.ref(r).once("value", function(data) {
           ret = data.val();
-        });
+        }).then(console.log(0));
         console.log(ret);
         return ret;
       };
